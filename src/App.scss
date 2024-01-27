@@ -1,0 +1,50 @@
+#root {
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: unset;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  & h1 {
+    text-align: center;
+  }
+
+}
+
+.icon__button {
+
+  position: relative;
+
+  & button {
+    position: relative;
+    z-index: 1;
+  }
+
+  & div:last-child {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+  }
+
+}
+
+.MuiPaper-root {
+  width: min-content;
+  padding: 1.2rem;
+  margin-top: 20vh;
+
+  .MuiCardContent-root {
+    min-width: 30vw;
+  }
+
+}
