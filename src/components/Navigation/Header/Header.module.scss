@@ -1,0 +1,35 @@
+.container {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    height: 10rem;
+    width: 100vw !important;
+    margin: 0 2rem;
+
+    &Nav {
+        margin: 0 5% 0 0;
+    }
+
+    &Additional {
+        width: 7rem;
+        margin: 0 3.5rem;
+    }
+
+    &Traslation {
+
+        display: flex;
+        flex-wrap: nowrap;
+
+        & button {
+            padding: 0 .2rem;
+            min-width: min-content;
+            margin: 0 .2rem;
+        }
+
+    }
+
+}
