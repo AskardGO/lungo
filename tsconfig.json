@@ -9,7 +9,6 @@
     "paths": {
       "*": ["src/*", "node_modules/@types/*"]
     },
-    "noStrictGenericChecks": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
