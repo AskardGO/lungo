@@ -1,5 +1,5 @@
 {
-  "name": "portfolio",
+  "name": "longo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -17,8 +17,6 @@
     "@mui/material": "^5.14.18",
     "@mui/styled-engine-sc": "^6.0.0-alpha.6",
     "@react-spring/web": "^9.7.3",
-    "classnames": "^2.5.1",
-    "gsap": "^3.12.2",
     "i18next-http-backend": "^2.4.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.3",
@@ -26,8 +24,9 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3",
     "sass": "^1.69.5",
-    "sort-by": "^1.2.0",
-    "styled-components": "^6.1.1"
+    "sort-by": "^0.0.2",
+    "styled-components": "^6.1.1",
+    "vite-tsconfig-paths": "^4.3.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
