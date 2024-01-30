@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from './Header.module.scss'
 import { NavigationItems } from "./NavigationItems/NavigationItems";
-import { NavLink, useNavigate, useNavigation, useLocation} from "react-router-dom";
-import {Translations} from "./Translations/Translations.tsx";
+import { useLocation } from "react-router-dom";
+import { Translations } from "./Translations/Translations.tsx";
 
-
-const GoHomeButton = () => {
-    return(
-       <NavLink to="/">
-                    HOME
-                </NavLink>)
-}
+import GoHomeButton from "./GoHomeButton/GoHomeButton.tsx";
 
 export const Header: React.FC = () => {
 
@@ -21,16 +15,10 @@ export const Header: React.FC = () => {
         setIsHome(pathname === '/')    
     }, [pathname])
 
-    useEffect(() => {
-        console.log(isHome);
-    }, [isHome])
-
     return(
         <div className={styles.container}> 
             <div className={styles.containerAdditional}>
-                {
-                    !isHome && <GoHomeButton/>
-                }
+                <GoHomeButton isHome={isHome}/>
             </div>
             <div className={styles.containerNav}>
                 <NavigationItems selectedPath={pathname} isHome={isHome}/>

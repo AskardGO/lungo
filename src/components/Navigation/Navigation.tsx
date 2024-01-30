@@ -1,33 +1,56 @@
 import {
     createBrowserRouter,
     RouterProvider,
-    Outlet
-  } from "react-router-dom";
-import { TopSection } from "../TopSection/TopSection";
-import { Header } from "./Header/Header";
+    Outlet, Route, Routes
+} from "react-router-dom";
+import {TopSection} from "../TopSection/TopSection";
+import {Header} from "./Header/Header";
+import React, {useEffect, useMemo, useState} from "react";
 
-const Home = () => (
-    <>
-      <Header/>
-      <Outlet />
+const BaseComponent = () => {
+
+    useEffect(() => {
+        const clearLocalStorage = () => {
+            localStorage.removeItem("main_animation_played");
+        };
+
+        window.addEventListener("beforeunload", clearLocalStorage);
+
+        return () => {
+            window.removeEventListener("beforeunload", clearLocalStorage);
+        };
+
+    }, []);
+
+    return <>
+        <Header/>
+        <Outlet/>
     </>
-  )
-  
-  const About = () => <div>about</div>;
-  const Contact = () => <div>contact</div>;
-  const Menu = () => <div>menu</div>;
-  
-  const router = createBrowserRouter([
+}
+
+const Home = () => {
+
+    const status = useState<boolean>(!!localStorage.getItem("main_animation_played") || false);
+
+    return useMemo(() => <TopSection animationStatus={status}/>, [status])
+
+}
+
+const About = () => <div>about</div>;
+const Contact = () => <div>contact</div>;
+const Menu = () => <div>menu</div>;
+
+const router = createBrowserRouter([
     {
-      path: "/",
-      element: <Home />,
-      children: [
-        { path: "/", element: <TopSection /> },
-        { path: "/about", element: <About /> },
-        { path: "/contact", element: <Contact /> },
-        { path: "/menu", element: <Menu /> },
-      ],
+        path: "/",
+        element: <BaseComponent/>,
+        children: [
+            {path: "/", element: <Home/>},
+            {path: "/about", element: <About/>},
+            {path: "/contact", element: <Contact/>},
+            {path: "/menu", element: <Menu/>},
+        ],
     },
-  ]);
+]);
 
 export const RouteProvider = () => <RouterProvider router={router}/>

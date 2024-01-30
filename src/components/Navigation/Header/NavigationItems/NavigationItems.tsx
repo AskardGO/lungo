@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, {useCallback, useEffect, useMemo} from "react";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 
@@ -11,9 +11,9 @@ type NavigationItemsProps = {
 
 export const NavigationItems: React.FC<NavigationItemsProps> = ({isHome, selectedPath}) => {
 
-    const {t} = useTranslation()
+    const {t, i18n} = useTranslation()
 
-    const items = [
+    const generateItems = useCallback(() => [
         {
             href: '/about',
             title: t('navigation.about')
@@ -26,13 +26,17 @@ export const NavigationItems: React.FC<NavigationItemsProps> = ({isHome, selecte
             href: '/menu',
             title: t('navigation.menu')
         }
-    ]
+    ], [t]);
+
+    useEffect(() => {
+        console.log("Current language:", i18n.language);
+    }, [i18n.language]);
 
     const Items = useMemo(() => {
         return(
             <nav className={styles.container}>
                 {
-                    items.map((i, index) => (
+                    generateItems().map((i, index) => (
                         <NavLink key={index + '-nav_item'} style={{fontWeight: selectedPath === i.href ? 700 : 500}} to={i.href}>
                             { i.title }
                         </NavLink>
@@ -40,7 +44,7 @@ export const NavigationItems: React.FC<NavigationItemsProps> = ({isHome, selecte
                 }
             </nav>
         )
-    }, [isHome, selectedPath])
+    }, [isHome, selectedPath, i18n.language])
 
     return Items
 

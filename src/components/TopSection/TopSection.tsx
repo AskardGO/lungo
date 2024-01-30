@@ -2,40 +2,65 @@ import React, {useEffect, useState} from "react"
 import styles from './TopSection.module.scss'
 import {useSpring, a, easings} from "@react-spring/web";
 
-export const TopSection: React.FC = () => {
+type TopSectionProps = {
+    animationStatus: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+}
+export const TopSection: React.FC<TopSectionProps> = ({animationStatus}) => {
 
-    const [isBrandAnimationStarted, setIsBrandAnimationStarted] = useState(false)
-    const [bgprops] = useSpring(() => ({
+    const [isBrandAnimationStarted, setIsBrandAnimationStarted] = useState(false);
+    const [isAnimationPlayed, setIsAnimationPlayed] = animationStatus
+
+    const [bgprops, bgApi] = useSpring(() => ({
         transform: "scale(1)",
-        delay: 800,
-        onChange: (result) => {
-            const status = parseFloat(result.value.transform.match(/\d+/g)[1].slice(0, 1) + '.' + result.value.transform.match(/\d+/g)[1].slice(1, 4));
-            if(status < 0.8 && !isBrandAnimationStarted) {
-                setIsBrandAnimationStarted(true)
-            }
-        },
-        from: {
-            transform: "scale(1.1)"
-        },
-        config: {
-            duration: 15500,
-            easing: easings.easeOutCirc,
-        }
+    }), [isAnimationPlayed]);
+    const [brandprops, brandApi] = useSpring(() => ({
+        transform: "scale(1)",
+        opacity: 1
     }));
 
-    const [brandprops] = useSpring(() => ({
-        transform: "scale(1)",
-        opacity: 1,
-        delay: 1500,
-        from: {
-            transform: "scale(1.1)",
-            opacity: 0
-        },
-        config: {
-            duration: 3800,
-            easing: easings.easeOutCirc,
+    useEffect(() => {
+        playAnimation();
+    }, []);
+
+    const playAnimation = () => {
+        if(!isAnimationPlayed) {
+            bgApi.start({
+                from: {
+                    transform: "scale(1.1)"
+                },
+                to: {
+                    transform: "scale(1)"
+                },
+                config: {
+                    duration: 15500
+                },
+                onStart: () => {
+                    setIsAnimationPlayed(true)
+                }
+            });
+
+            brandApi.start({
+                from: {
+                    transform: "scale(1.1)",
+                    opacity: 0
+                },
+                to: {
+                    transform: "scale(1)",
+                    opacity: 1
+                },
+                config: {
+                    duration: 3800,
+                    easing: easings.easeOutCirc,
+                },
+                delay: 1500
+            })
+
         }
-    }));
+    }
+
+    useEffect(() => {
+        localStorage.setItem("main_animation_played", JSON.stringify(isAnimationPlayed))
+    }, [isAnimationPlayed]);
 
     return (
         <>
