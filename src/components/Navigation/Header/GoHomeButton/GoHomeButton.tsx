@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useCallback, useEffect } from 'react';
 import {a, useSpring, SpringProps} from "@react-spring/web";
 import { NavLink } from 'react-router-dom';
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -23,7 +23,7 @@ const GoHomeButton = ({isHome}: {isHome: boolean}) => {
         buttonApi.start();
     }, [isHome]);
 
-    return <a.div style={buttonProps as React.HTMLAttributes<SpringProps>}>
+    return <a.div style={{...buttonProps as React.HTMLAttributes<SpringProps>}}>
         <NavLink to="/">
             <ArrowBackIcon/>
         </NavLink>

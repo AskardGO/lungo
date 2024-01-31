@@ -2,7 +2,7 @@ import React, {useCallback, useEffect, useMemo} from "react";
 import {Button, ButtonGroup} from "@mui/material";
 import {useTranslation} from "react-i18next";
 
-export const Translations = () => {
+export const Translations = ({isHome}: {isHome: boolean}) => {
 
     const {i18n} = useTranslation()
 
@@ -29,12 +29,12 @@ export const Translations = () => {
                 key={translation + '-lang'}
                 onClick={() => updateTranslation(translation)}
             >
-                <span style={{fontWeight: isSelected ? 800 : 300, fontSize: isSelected ? '.9rem' : '.8rem'}}>
+                <span style={{fontWeight: isSelected ? 800 : 300, fontSize: isSelected ? '.9rem' : '.8rem', transition: '.3s', color: isHome ? '#fff' : '#000'}}>
                     {translation}
                 </span>
             </Button>
         })
-        , [i18n.language])
+        , [i18n.language, isHome])
 
     return translationItems
 }

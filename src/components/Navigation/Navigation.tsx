@@ -6,6 +6,7 @@ import {
 import {TopSection} from "../TopSection/TopSection";
 import {Header} from "./Header/Header";
 import React, {useEffect, useMemo, useState} from "react";
+import {Contact} from "../../pages/Contact";
 
 const BaseComponent = () => {
 
@@ -37,7 +38,7 @@ const Home = () => {
 }
 
 const About = () => <div>about</div>;
-const Contact = () => <div>contact</div>;
+
 const Menu = () => <div>menu</div>;
 
 const router = createBrowserRouter([

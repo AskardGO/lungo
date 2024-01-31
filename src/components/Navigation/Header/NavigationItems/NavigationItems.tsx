@@ -37,7 +37,7 @@ export const NavigationItems: React.FC<NavigationItemsProps> = ({isHome, selecte
             <nav className={styles.container}>
                 {
                     generateItems().map((i, index) => (
-                        <NavLink key={index + '-nav_item'} style={{fontWeight: selectedPath === i.href ? 700 : 500}} to={i.href}>
+                        <NavLink key={index + '-nav_item'} style={{fontWeight: selectedPath === i.href ? 700 : 500, color: isHome ? '#fff' : '#000'}} to={i.href}>
                             { i.title }
                         </NavLink>
                     ))
