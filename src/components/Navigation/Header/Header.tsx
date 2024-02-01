@@ -39,7 +39,7 @@ export const Header: React.FC = () => {
     }, [nav]);
 
     useLayoutEffect(() => {
-        // Setup animation
+
         titleApi.start({
             to: {
                 opacity: isHome ? 0 : 1,
