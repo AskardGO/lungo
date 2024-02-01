@@ -13,11 +13,16 @@
         text-transform: uppercase;
         font-size: 2rem;
         margin-top: 2.2rem;
+        height: 0;
 
         & a {
 
         }
 
+    }
+
+    &Title_full {
+        height: 60px;
     }
 
 }
