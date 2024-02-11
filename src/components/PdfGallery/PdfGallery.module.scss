@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0 2rem 0;
+
+  &.react-pdf__Document {
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  }
+
+  &Controlls {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 40vh;
+    color: #535bf2;
+    width: 60%;
+    height: 30vh;
+  }
+
+}
+
+.counter {
+  position: fixed;
+  top: 22vh;
+  right: 4vw;
+}

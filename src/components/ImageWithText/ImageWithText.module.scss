@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  width: 100vw;
+  height: 19vw;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  //margin: 2rem 0 3rem 0;
+
+  & img {
+
+    filter: blur(.2vw) brightness(60%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+  }
+
+  & h2 {
+    position: absolute;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5vw;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-align: left;
+    z-index: 1;
+  }
+
+}
+
+.underline {
+  height: .05rem;
+  background-color: white;
+  width: 16vw;
+  position: absolute;
+  z-index: 2;
+  margin-top: 5vw;
+}

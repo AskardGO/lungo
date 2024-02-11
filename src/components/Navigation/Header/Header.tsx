@@ -85,10 +85,10 @@ export const Header: React.FC = () => {
     }, [isHome, titleProps, titleBoxProps]);
 
     return (
-        <div className={styles.header}>
+        <div style={{boxShadow: isHome ? 'none' : '0px 5px 6px 2px rgba(255, 255, 255, 1)'}} className={styles.header}>
             <a.div style={titleBoxProps} className={`${styles.headerTitle} ${!isHome && styles.headerTitle_full}`}>
                 <NavLink to={'/'}>
-                    <a.div style={titleProps}>
+                    <a.div style={{opacity: isHome ? 0 : 1, ...titleProps}}>
                         <h3>
                             lunga la notte
                         </h3>

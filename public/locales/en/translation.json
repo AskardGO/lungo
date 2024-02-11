@@ -2,6 +2,17 @@
   "navigation": {
     "about": "About Us",
     "contact": "Contact",
-    "menu": "Menu"
+    "menu": "Menu",
+    "gallery": "Gallery"
+  },
+  "contact": {
+    "phone_number": "Phone Number",
+    "time": "Opening Hours",
+    "work_days": "Monday to Friday",
+    "saturday_from": "Saturday from",
+    "weekend": "Sunday is a Day Off"
+  },
+  "about": {
+    "message": "And here, the chef herself is cooking! It smells good. Like onions and caraway. Irma Bourntoulis is in the kitchen of her restaurant, placing minced meat on the dough discs she cut out earlier with a Georgian wooden mold. Later, she will shape the dough discs into pockets that look exactly like her lavish white chef's hat — her trademark."
   }
 }

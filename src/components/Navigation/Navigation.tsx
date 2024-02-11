@@ -1,12 +1,17 @@
 import {
     createBrowserRouter,
     RouterProvider,
-    Outlet, Route, Routes
+    Outlet, Route, Routes, redirect, Navigate
 } from "react-router-dom";
 import {TopSection} from "../TopSection/TopSection";
 import {Header} from "./Header/Header";
 import React, {useEffect, useMemo, useState} from "react";
 import {Contact} from "../../pages/Contact";
+import {About as AboutPage} from "../../pages/About";
+
+import {ContentWrapper} from "../ContentWrapper";
+import {Gallery} from "../../pages/Gallery";
+import {Menu} from "../../pages/Menu";
 
 const BaseComponent = () => {
 
@@ -37,9 +42,7 @@ const Home = () => {
 
 }
 
-const About = () => <div>about</div>;
-
-const Menu = () => <div>menu</div>;
+const About = () => <AboutPage/>
 
 const router = createBrowserRouter([
     {
@@ -47,10 +50,12 @@ const router = createBrowserRouter([
         element: <BaseComponent/>,
         children: [
             {path: "/", element: <Home/>},
-            {path: "/about", element: <About/>},
-            {path: "/contact", element: <Contact/>},
-            {path: "/menu", element: <Menu/>},
+            {path: "/about", element: <ContentWrapper><About/></ContentWrapper>},
+            {path: "/contact", element: <ContentWrapper><Contact/></ContentWrapper>},
+            {path: "/menu", element: <ContentWrapper><Menu/></ContentWrapper>},
+            {path: "/gallery", element: <ContentWrapper><Gallery/></ContentWrapper>},
         ],
+        errorElement: <Navigate to="/" />
     },
 ]);
 

@@ -2,6 +2,17 @@
   "navigation": {
     "about": "Über uns",
     "contact": "Kontakt",
-    "menu": "Speisekarte"
+    "menu": "Menü",
+    "gallery": "Galerie"
+  },
+  "contact": {
+    "phone_number": "Telefonnummer",
+    "time": "Öffnungszeiten",
+    "work_days": "Montag bis Freitag",
+    "saturday_from": "Samstag ab",
+    "weekend": "Sonntag ist Ruhetag"
+  },
+  "about": {
+    "message": "Und hier kocht die Chefin persönlich! Es riecht gut. Nach Zwiebeln und Kümmel. Irma Bourntoulis steht in der Küche ihres Restaurants und platziert Hackfleisch auf den Teigplätzchen, die sie zuvor mit einem georgischen Holzmodell ausgestochen hat. Später wird sie die Teigplätzchen zu Taschen formen, die exakt so aussehen wie ihre opulente weiße Kochmütze — ihr Markenzeichen."
   }
 }

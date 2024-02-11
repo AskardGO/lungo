@@ -1,0 +1,42 @@
+.card {
+  display: flex;
+  border-radius: 0.6rem;
+  overflow:hidden;
+  position: relative;
+  transition: .3s;
+
+  &:hover {
+    transition: 0s;
+    scale: (1.1);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+  }
+
+  &Bg {
+    background-size: cover !important;
+    width: 100%;
+  }
+
+  &Content {
+    width: 100%;
+    height: 100%;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+  }
+
+
+
+
+}
+
+.reflejo {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -1rem;
+  z-index: 100;
+}

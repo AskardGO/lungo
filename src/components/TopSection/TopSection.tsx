@@ -63,7 +63,7 @@ export const TopSection: React.FC<TopSectionProps> = ({animationStatus}) => {
     }, [isAnimationPlayed]);
 
     return (
-        <>
+        <div className={styles.wrapper}>
             <a.div style={bgprops} className={styles.container}>
                 <div className={styles.containerImage}>
                     <img src="background.webp" alt="Background" />
@@ -72,7 +72,7 @@ export const TopSection: React.FC<TopSectionProps> = ({animationStatus}) => {
             <a.div style={brandprops} className={styles.containerBrand}>
                 <img src="brand.webp" alt="Brand"/>
             </a.div>
-        </>
+        </div>
 
     );
 }

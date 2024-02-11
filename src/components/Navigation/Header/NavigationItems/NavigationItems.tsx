@@ -25,12 +25,12 @@ export const NavigationItems: React.FC<NavigationItemsProps> = ({isHome, selecte
         {
             href: '/menu',
             title: t('navigation.menu')
+        },
+        {
+            href: '/gallery',
+            title: t('navigation.gallery')
         }
     ], [t]);
-
-    useEffect(() => {
-        console.log("Current language:", i18n.language);
-    }, [i18n.language]);
 
     const Items = useMemo(() => {
         return(

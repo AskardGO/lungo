@@ -1,7 +1,18 @@
 {
   "navigation": {
-    "about": "Chi Siamo",
-    "contact": "Contatto",
-    "menu": "Menu"
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "menu": "Menù",
+    "gallery": "Galleria"
+  },
+  "contact": {
+    "phone_number": "Numero di telefono",
+    "time": "Orari di apertura",
+    "work_days": "Dal lunedì al venerdì",
+    "saturday_from": "Sabato dalle",
+    "weekend": "La domenica è giorno di riposo"
+  },
+  "about": {
+    "message": "Ed ecco che la chef sta cucinando personalmente! Profuma di buono. Di cipolla e cumino. Irma Bourntoulis è in cucina del suo ristorante, posiziona la carne macinata sui dischi di pasta che ha precedentemente tagliato con uno stampo georgiano in legno. In seguito, darà forma ai dischi di pasta creando delle tasche che assomigliano esattamente al suo sontuoso cappello da chef bianco — il suo marchio distintivo."
   }
 }
