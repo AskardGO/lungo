@@ -27,8 +27,8 @@ export const Header: React.FC = () => {
         config: { duration: 200 },
     }));
 
-    const handleEscape = () => {
-        if (isHome) {
+    const handleEscape = (e: KeyboardEvent) => {
+        if (isHome && e.key === "Escape") {
             nav("/");
         }
     };
